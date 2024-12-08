@@ -1,9 +1,10 @@
 #!/bin/bash
 
-# Update the system and install Chromium and necessary dependencies
+# Update the package list
 apt-get update
+
+# Install system dependencies required by Playwright
 apt-get install -y \
-  chromium-browser \
   libnss3 \
   libxss1 \
   libasound2 \
@@ -11,10 +12,9 @@ apt-get install -y \
   libappindicator3-1 \
   xdg-utils \
   lsb-release \
-  libgbm-dev
+  libgbm-dev \
+  wget \
+  ca-certificates
 
-# Install the Playwright browsers
+# Install Playwright browsers and dependencies
 npx playwright install --with-deps
-
-# Install the Node.js dependencies (after ensuring browsers are installed)
-npm install
