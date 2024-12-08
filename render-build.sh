@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Update and install Chromium and other required dependencies
+# Update the system and install Chromium and necessary dependencies
 apt-get update
 apt-get install -y \
   chromium-browser \
@@ -13,8 +13,8 @@ apt-get install -y \
   lsb-release \
   libgbm-dev
 
-# Install Playwright browsers
-npx playwright install
+# Install the Playwright browsers
+npx playwright install --with-deps
 
-# Install Node.js dependencies
+# Install the Node.js dependencies (after ensuring browsers are installed)
 npm install
