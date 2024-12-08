@@ -6,6 +6,7 @@ const { chromium } = require('playwright');  // Use Playwright's Chromium browse
     headless: true,  // Run in headless mode (no UI)
     args: ['--no-sandbox', '--disable-setuid-sandbox'],  // Recommended args for cloud environments
   });
+  executablePath: chromium.executablePath()
 
   // Create a new page
   const page = await browser.newPage();
