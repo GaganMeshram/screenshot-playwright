@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Update package lists
+# Update package lists and install required dependencies
 apt-get update
-
-# Install dependencies required for Playwright and Chromium
 apt-get install -y \
   chromium-browser \
   libnss3 \
