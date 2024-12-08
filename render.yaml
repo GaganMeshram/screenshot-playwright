@@ -1,8 +1,24 @@
-services:
-  - type: web
-    name: my-playwright-app
-    env: node
-    buildCommand: |
-      npm install
-      npx playwright install --with-deps
-    startCommand: npm start
+#!/bin/bash
+
+# Update package lists
+apt-get update
+
+# Install dependencies required for Playwright and Chromium
+apt-get install -y \
+  chromium-browser \
+  libnss3 \
+  libxss1 \
+  libasound2 \
+  fonts-liberation \
+  libappindicator3-1 \
+  xdg-utils \
+  lsb-release \
+  libgbm-dev \
+  wget \
+  ca-certificates
+
+# Install Playwright and its dependencies (including Chromium)
+npx playwright install --with-deps
+
+# Install Node.js dependencies
+npm install
